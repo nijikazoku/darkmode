@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
   const handleMenu = (menu) => {
     if (myMenu === menu) {
@@ -20,16 +18,16 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
       >
         {/* 上の3つ */}
         <div class="flex justify-between space-x-2 text-center font-bold whitespace-nowrap">
-          <Link
-            href="/PickUp"
+          <div
+            href="/Pickup"
             onClick={handleClose}
             class={`w-[33%] p-1 rounded-lg ${
               dark ? "bg-red-700" : "bg-red-200"
             }`}
           >
             注目の試合
-          </Link>
-          <Link
+          </div>
+          <div
             href="/Board"
             onClick={handleClose}
             class={`w-[33%] rounded-lg p-1 ${
@@ -37,8 +35,8 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
             }`}
           >
             LIVE掲示板
-          </Link>
-          <Link
+          </div>
+          <div
             href="/Support"
             onClick={handleClose}
             class={`w-[33%] rounded-lg p-1 ${
@@ -46,7 +44,7 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
             }`}
           >
             サポート
-          </Link>
+          </div>
         </div>
         {/* 「メニュー」選択時メニュー */}
         {menuTab === 1 && (
@@ -72,7 +70,9 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
                       d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <div>マイページ</div>
+                  <div className={`${dark ? "text-white" : ""}`}>
+                    マイページ
+                  </div>
                 </div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -361,7 +361,7 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
           <div class="mx-auto mt-4">
             <div class="grid grid-cols-2 gap-1 p-1 whitespace-nowrap">
               {/* スポーツベット */}
-              <Link
+              <div
                 onClick={handleClose}
                 href="/SportsBet"
                 class={`flex flex-col items-center justify-center space-y-1 p-4 rounded-tl-lg ${
@@ -373,12 +373,12 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
                   class="w-10"
                   alt=""
                 />
-                <p class={`font-bold ${dark ? "text-white" : "text-black"}`}>
+                <div class={`font-bold ${dark ? "text-white" : "text-black"}`}>
                   スポーツベット
-                </p>
-              </Link>
+                </div>
+              </div>
               {/* オンラインカジノ */}
-              <Link
+              <div
                 href="/OnlineCasino"
                 onClick={handleClose}
                 class={`flex flex-col items-center justify-center space-y-1 p-4 rounded-tr-lg ${
@@ -390,12 +390,12 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
                   class="w-10"
                   alt=""
                 />
-                <p class={`font-bold ${dark ? "text-white" : "text-black"}`}>
+                <div class={`font-bold ${dark ? "text-white" : "text-black"}`}>
                   オンラインカジノ
-                </p>
-              </Link>
+                </div>
+              </div>
               {/* バーチャルスポーツ */}
-              <Link
+              <div
                 href="/VirtualSports"
                 onClick={handleClose}
                 class={`flex flex-col items-center justify-center space-y-1 p-4 rounded-bl-lg ${
@@ -407,16 +407,16 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
                   class="w-10"
                   alt=""
                 />
-                <p
+                <div
                   class={`font-bold text-[0.9rem] ${
                     dark ? "text-white" : "text-black"
                   }`}
                 >
                   バーチャルスポーツ
-                </p>
-              </Link>
+                </div>
+              </div>
               {/* 無料カジノ */}
-              <Link
+              <div
                 href="FreeCasino"
                 onClick={handleClose}
                 class={`flex flex-col items-center justify-center space-y-1 p-4 rounded-br-lg ${
@@ -428,10 +428,10 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
                   class="w-10"
                   alt=""
                 />
-                <p class={`font-bold ${dark ? "text-white" : "text-black"}`}>
+                <div class={`font-bold ${dark ? "text-white" : "text-black"}`}>
                   無料カジノ
-                </p>
-              </Link>
+                </div>
+              </div>
             </div>
           </div>
         )}

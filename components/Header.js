@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 
 const Header = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme("");
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [myMenu, setMyMenu] = useState("");
@@ -13,16 +13,7 @@ const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => setMounted(true), []);
-  const renderThemeChanger = () => {
-    return (
-      <button
-        className="border p-2  text-white dark:text-white border-white dark:border-gray-400 dark:bg-slate-800 text-center"
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      >
-        切り替える
-      </button>
-    );
-  };
+
   const handleOpen = () => {
     setIsOpen(true);
     setMenuTab(1);
@@ -35,9 +26,11 @@ const Header = () => {
     setMenuTab(index);
   };
 
+  const dark = theme === "dark";
+
   return (
     <>
-      <header class="h-[60px] fixed top-0 w-full bg-[#22396d]">
+      <header class="h-[60px] z-10 fixed top-0 w-full bg-[#22396d]">
         <div className="flex px-1 justify-between space-x-2 h-full items-center">
           <div className="flex space-x-2 ">
             <svg
@@ -61,58 +54,15 @@ const Header = () => {
               <span class="text-[#E8B30F]">CHANNEL</span>
             </Link>
           </div>
-
-          {/* BTCとUSD */}
-          {/* {isBtc ? (
-            <div className="flex-grow flex text-center">
-              <div
-                className="w-[20%] flex items-center justify-end"
-                onClick={handleBtc}
-              >
-                <img
-                  className="w-6"
-                  src="https://www.pngall.com/wp-content/uploads/12/USD-PNG-Background.png"
-                  alt=""
-                />
-              </div>
-              <div className="text-sm flex-grow  font-bold">
-                <div className="text-center">〇〇〇〇〇様</div>
-                <div>
-                  <span className="text-[#2ab4f4] text-[1rem] font-bold">
-                    0.19303205
-                  </span>
-                  <span className="text-thin text-[#2ab4f4] text-[0.8rem]">
-                    BTC
-                  </span>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="flex-grow flex text-center">
-              <div
-                className="w-[20%] flex items-center justify-end"
-                onClick={handleBtc}
-              >
-                <img
-                  className="w-6"
-                  src="https://cryptologos.cc/logos/bitcoin-btc-logo.png"
-                  alt=""
-                />
-              </div>
-              <div className="text-sm flex-grow font-bold">
-                <div className="text-center">〇〇〇〇〇様</div>
-                <div>
-                  <span className="text-[#2ab4f4] text-[1rem] font-bold">
-                    3482
-                  </span>
-                  <span className="text-thin text-[#2ab4f4] text-[0.8rem]">
-                    USD
-                  </span>
-                </div>
-              </div>
-            </div>
-          )} */}
-          <div>{renderThemeChanger()}</div>
+          <div onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            {dark ? (
+              <button className="border-2 p-1">ライトモードにする</button>
+            ) : (
+              <button className="text-white border-2 p-1">
+                ダークモードにする
+              </button>
+            )}
+          </div>
         </div>
         <Sidebar
           setMyMenu={setMyMenu}

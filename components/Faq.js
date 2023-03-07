@@ -1,9 +1,7 @@
-import Link from "next/link";
-
 const Faq = ({ handleClose, theme }) => {
   const dark = theme === "dark";
   return (
-    <Link
+    <div
       href="/Frequent"
       onClick={handleClose}
       class={`mx-auto flex w-[90%] items-center justify-center space-x-1 rounded-lg ${
@@ -25,7 +23,7 @@ const Faq = ({ handleClose, theme }) => {
         />
       </svg>
       <div class="text-lg font-bold">よくある質問</div>
-    </Link>
+    </div>
   );
 };
 

@@ -30,14 +30,14 @@ const Sidebar = ({
     setIsOpen(false);
   };
 
-  //   useEffect(() => {
-  //     const storedTheme = localStorage.getItem("theme");
-  //     if (storedTheme) {
-  //       setTheme(storedTheme);
-  //     } else {
-  //       setTheme("light");
-  //     }
-  //   }, []);
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    } else {
+      setTheme("light");
+    }
+  }, []);
 
   return (
     <>
