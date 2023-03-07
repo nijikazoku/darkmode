@@ -5,7 +5,7 @@ const Test3 = () => {
     <>
       <div className="w-[90%] py-10 space-x-3 text-center  mx-auto">
         <h1>３ページ目</h1>
-        <div className="border-2 border-black p-3">
+        <div className="border-2 border-black dark:border-white p-3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
           minus rem! Sapiente neque tempore amet placeat hic modi eos tenetur
           accusantium! Quos quas iusto veritatis quo rem facilis natus molestias
