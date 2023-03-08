@@ -65,7 +65,6 @@ const Sidebar = ({
           setMenuTab={setMenuTab}
           changeMenuTab={changeMenuTab}
         />
-
         <MainMenu
           theme={theme}
           menuTab={menuTab}

@@ -1,3 +1,5 @@
+import SelectTimeZone from "./SelectTimeZone";
+
 const GuestLogin = ({ isLogin, theme, handleClose, handleLogin, setTheme }) => {
   return (
     <>
@@ -69,6 +71,8 @@ const GuestLogin = ({ isLogin, theme, handleClose, handleLogin, setTheme }) => {
           </div>
         </div>
       </div>
+      {/* タイムゾーン */}
+      <SelectTimeZone />
       {/* <!-- 登録・ログインボタン --> */}
       {!isLogin && (
         <div class="mx-auto w-[90%] space-y-2 text-center">
