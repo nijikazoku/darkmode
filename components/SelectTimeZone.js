@@ -112,7 +112,7 @@ const SelectTimeZone = () => {
           ref={wrapperRef}
           id="timezone"
           value={timezone}
-          class="absolute left-0 z-10 mt-2 py-1 w-[17rem] origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-700"
+          class="absolute left-0 top-20 z-10 mt-2 py-1 w-[17rem] origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-700"
         >
           <div className="flex flex-col">
             {importantTimezones.map((timezone, index) => (
