@@ -81,6 +81,7 @@ const GuestLogin = ({ isLogin, theme, handleClose, handleLogin, setTheme }) => {
           </div>
           <div
             onClick={handleLogin}
+            id="box"
             class="rounded-lg text-black bg-[#E2F049] py-1"
           >
             ログイン

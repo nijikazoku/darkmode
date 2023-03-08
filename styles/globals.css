@@ -11,3 +11,12 @@
 .logoRotate {
   @apply transition duration-300 transform ease-in-out;
 }
+
+@layer utilities {
+  .box::before {
+    @apply content-['']  absolute bg-[conic-gradient(#dd6b20_120deg,transparent_120deg)] w-[90px] h-[90px] top-[-25%] left-[-25%] animate-fullSpin;
+  }
+  .box::after {
+    @apply content-[""] rounded-lg text-white w-[94%] h-[94%] bg-[#22396d] absolute top-[3%] left-[3%] flex justify-center items-center uppercase tracking-[2px] font-medium;
+  }
+}
