@@ -84,14 +84,14 @@ const GuestLogin = ({ isLogin, theme, handleClose, handleLogin, setTheme }) => {
         <div class="mx-auto w-[90%] space-y-2 relative text-center">
           <div
             onClick={() => setShow(!show)}
-            className={`rounded-lg animate-bounce  bg-[#009944] py-1 text-white`}
+            className={`rounded-lg animate-bounce border-b-[5px] border-[#03612e]  bg-[#009944] py-1 text-white`}
           >
             <button>15秒で登録</button>
           </div>
           <div
             onClick={handleLogin}
             id="box"
-            class="rounded-lg text-black bg-[#E2F049] py-1"
+            class="rounded-lg text-black border-b-[5px] border-[#9fa933] bg-[#E2F049] py-1"
           >
             ログイン
           </div>
