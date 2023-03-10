@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   collection,
   onSnapshot,
@@ -33,8 +33,8 @@ const Contents = () => {
     <div className="w-full">
       {posts.map((post, index) => {
         return (
-          <div className="bg-gray-100 px-2 py-1 border-b shadow-md" key={index}>
-            <p className="text-sm">
+          <div className="px-2 py-1 border-b shadow-md" key={index}>
+            <p className="text-sm ">
               {post.postedAt ? post.postedAt.toDate().toLocaleString() : ""}
             </p>
             <p className={`text-xl ${post.color}`}>{post.text}</p>

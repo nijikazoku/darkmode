@@ -1,5 +1,5 @@
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import db from "../../src/fire";
 
 const InputBoard = () => {
@@ -11,8 +11,7 @@ const InputBoard = () => {
     "text-purple-500",
   ];
   const [inputText, setInputText] = useState("");
-  const [showColor, setShowColor] = useState(false);
-  const [selectColor, setSelectColor] = useState("text-black");
+  const [selectColor, setSelectColor] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +30,7 @@ const InputBoard = () => {
       <form onSubmit={handleSubmit}>
         <input
           placeholder="コメントを書き込もう！"
-          className={`border-2 px-2 outline-none py-2 fixed bottom-0 mb-[60px] w-full ${
+          className={`bg-white border-2 dark:bg-slate-900 rounded-md px-2 outline-none py-2 fixed bottom-0 mb-[60px] h-[47px] w-full ${
             selectColor === "text-red-600" && "placeholder-red-600"
           } ${selectColor === "text-green-600" && "placeholder-green-600"} ${
             selectColor === "text-blue-600" && "placeholder-blue-600"
@@ -43,11 +42,21 @@ const InputBoard = () => {
       </form>
       <div className="fixed bottom-2 right-3 mb-[60px] ">
         <ul className="flex space-x-2">
-          <li
-            onClick={() => setSelectColor("text-black")}
-            className="text-black text-xl"
-          >
-            ●
+          <li onClick={() => setSelectColor("")}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+              />
+            </svg>
           </li>
           <li
             onClick={() => setSelectColor("text-red-600")}
