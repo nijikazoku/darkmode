@@ -1,6 +1,6 @@
 import { useState } from "react";
-import RegisterForm from "./RegisterForm";
 import SelectTimeZone from "./SelectTimeZone";
+import SlideRegister from "./SlideRegister";
 
 const GuestLogin = ({ isLogin, theme, handleClose, handleLogin, setTheme }) => {
   const [show, setShow] = useState(false);
@@ -22,7 +22,7 @@ const GuestLogin = ({ isLogin, theme, handleClose, handleLogin, setTheme }) => {
           </span>
         </div>
         {/* <!--ダークモード 閉じるボタン --> */}
-        <div class="mx-auto z-20 flex flex-grow items-center justify-end px-3">
+        <div class="mx-auto z-10 flex flex-grow items-center justify-end px-3">
           <div class="flex items-center space-x-3">
             {theme === "light" ? (
               <svg
@@ -82,12 +82,9 @@ const GuestLogin = ({ isLogin, theme, handleClose, handleLogin, setTheme }) => {
       {/* <!-- 登録・ログインボタン --> */}
       {!isLogin && (
         <div class="mx-auto w-[90%] space-y-2 relative text-center">
-          <div
-            onClick={() => setShow(!show)}
-            className={`rounded-lg animate-bounce border-b-[5px] border-[#03612e]  bg-[#009944] py-1 text-white`}
-          >
-            <button>15秒で登録</button>
-          </div>
+          {/* 登録ボタン */}
+          <SlideRegister show={show} setShow={setShow} />
+          {/* ログインボタン */}
           <div
             onClick={handleLogin}
             id="box"
@@ -95,13 +92,14 @@ const GuestLogin = ({ isLogin, theme, handleClose, handleLogin, setTheme }) => {
           >
             ログイン
           </div>
-          <div
+          {/* <div
             className={`absolute dark:bg-slate-600 w-full  top-17 rounded-lg -left-0 dark:border-none ${
               show ? " z-10 bg-gray-100 border" : "hidden"
             }  px-10 py-5`}
-          >
-            <RegisterForm show={show} setShow={setShow} />
-          </div>
+          > */}
+          {/* <RegisterForm show={show} setShow={setShow} /> */}
+
+          {/* </div> */}
         </div>
       )}
     </>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Faq from "./Faq";
 import GuestLogin from "./GuestLogin";
 import Language from "./Language";
@@ -42,7 +42,7 @@ const Sidebar = ({
   return (
     <>
       <nav
-        className={`space-y-2 z-10 w-screen h-screen px-4 absolute py-4 top-0 transform overflow-auto transition-transform duration-1000 ${
+        className={`space-y-2  w-screen h-screen px-4 absolute py-4 top-0 transform overflow-auto transition-transform duration-1000 ${
           isOpen ? "translate-y-0" : "-translate-x-full"
         } ${
           theme === "dark" ? "bg-[#0F172A] text-[#FEFEFE]" : "bg-[#e7e7ea] "
@@ -59,6 +59,7 @@ const Sidebar = ({
           handleLogin={handleLogin}
           handleClose={handleClose}
         />
+
         <Tab
           theme={theme}
           menuTab={menuTab}
