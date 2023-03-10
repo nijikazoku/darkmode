@@ -2,6 +2,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
+import SlideRegister from "./SlideRegister";
 
 const Header = () => {
   const { theme, setTheme } = useTheme("");
@@ -54,6 +55,7 @@ const Header = () => {
               <span class="text-[#E8B30F]">CHANNEL</span>
             </Link>
           </div>
+          {/* ダークモードにするボタン */}
           <div onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
             {dark ? (
               <button className="border-2 p-1">ライトモードにする</button>

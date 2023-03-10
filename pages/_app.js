@@ -2,6 +2,7 @@ import { ThemeProvider, useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
+import "../styles/styles.css";
 
 export default function App({ Component, pageProps }) {
   const [isMounted, setIsMounted] = useState(false);

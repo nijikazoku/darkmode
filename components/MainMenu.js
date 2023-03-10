@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
   const handleMenu = (menu) => {
     if (myMenu === menu) {
@@ -27,7 +29,7 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
           >
             注目の試合
           </div>
-          <div
+          <Link
             href="/Board"
             onClick={handleClose}
             class={`w-[33%] rounded-lg p-1 ${
@@ -35,7 +37,7 @@ const MainMenu = ({ theme, handleClose, menuTab, myMenu, setMyMenu }) => {
             }`}
           >
             LIVE掲示板
-          </div>
+          </Link>
           <div
             href="/Support"
             onClick={handleClose}
